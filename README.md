@@ -1,5 +1,8 @@
 # Token Bucket Rate Limiter Service
 
+[![CI](https://github.com/tanmay0922/token-bucket-rate-limiter/actions/workflows/ci.yml/badge.svg)](https://github.com/tanmay0922/token-bucket-rate-limiter/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/tanmay0922/token-bucket-rate-limiter/actions/workflows/codeql.yml/badge.svg)](https://github.com/tanmay0922/token-bucket-rate-limiter/actions/workflows/codeql.yml)
+
 An in-memory, thread-safe **token bucket** rate limiter built with Spring Boot 3
 and Java 17. Every client gets its own bucket; requests over the limit are
 rejected with HTTP `429 Too Many Requests` and standard rate-limit headers.
