@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: token-bucket-rate-limiter
+
+# Rate limiter tuning. capacity = burst size, refill = steady-state rate.
+ratelimit:
+  capacity: 10
+  refill-tokens-per-second: 5
+  client-header: X-API-Key
+  # Bound memory: drop buckets that haven't been used in a while.
+  eviction:
+    enabled: true
+    idle-ttl: 10m      # a client idle this long loses its bucket
+    sweep-interval: 1m # how often the cleanup runs
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
